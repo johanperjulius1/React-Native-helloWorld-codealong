@@ -4,11 +4,11 @@ import { Provider } from "react-redux";
 import configureStore from "./src/state/store/configureStore";
 import App from "./App";
 
-store = configureStore();
+const store = configureStore();
 
 const ConnectedApp = () => {
   return (
-    <Provider>
+    <Provider store={store}>
       <App />
     </Provider>
   );
