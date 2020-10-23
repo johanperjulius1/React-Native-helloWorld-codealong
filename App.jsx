@@ -1,23 +1,19 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import MainScreen from "./src/components/MainScreen";
 import SecondScreen from "./src/components/SecondScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import { useSelector } from "react-redux"
+import Login from "./src/components/Login"
 
 const Stack = createStackNavigator()
 
 const App = () => {
-  // const greeting = useSelector(state => state.mainPageGreeting)
   return (
-    // <View style={styles.container}>
-    //   <Text>{greeting}</Text>
-    //   <StatusBar style="auto" />
-    // </View>
+ 
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="The First Page" component={MainScreen}/>
         <Stack.Screen name="Another Page" component={SecondScreen}/>
       </Stack.Navigator>
